@@ -1,7 +1,8 @@
-import { styled } from 'styled-components'
+import { keyframes, styled } from 'styled-components'
 
 export const CardCoffeeContainer = styled.article`
   max-width: 16rem;
+  height: 100%;
 
   background-color: ${(props) => props.theme.colors['base-card']};
   border-radius: 6px 36px 6px;
@@ -11,8 +12,23 @@ export const CardCoffeeContainer = styled.article`
   flex-direction: column;
   align-items: center;
 
+  transform: scale(1);
+  transition: 0.5s;
+  cursor: pointer;
+
+  border: 3px solid transparent;
+
+  &:hover {
+    border-color: ${(props) => props.theme.colors['purple-dark']};
+
+    img {
+      transform: scale(1.1);
+    }
+  }
+
   img {
     margin: -2.25rem 0 0.75rem 0;
+    transition: 0.5s;
   }
 `
 
@@ -37,11 +53,12 @@ export const Tag = styled.span`
 
 export const Description = styled.div`
   text-align: center;
+  flex: 1;
 
   h4 {
     font: ${(props) => props.theme.fonts['title-s']};
     color: ${(props) => props.theme.colors['base-title']};
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   p {
@@ -85,6 +102,7 @@ export const Counter = styled.div`
     color: ${(props) => props.theme.colors.purple};
     cursor: pointer;
     border: none;
+    outline: none;
     border-radius: 2px;
 
     display: flex;
@@ -98,6 +116,7 @@ export const Counter = styled.div`
 
 export const Button = styled.button`
   padding: 0.5rem;
+  border: none;
   border-radius: 6px;
   transition: 0.5s;
   cursor: pointer;

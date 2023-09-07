@@ -22,6 +22,7 @@ export const HeroContainer = styled.section`
   background-image: url(${BackgroundImage});
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 
   padding: 10rem 0;
 `
@@ -92,11 +93,7 @@ export const CoffeesContainer = styled.section`
   padding: 2rem 0;
 `
 
-export const CoffeesWrapper = styled(Wrapper)`
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
-`
+export const CoffeesWrapper = styled(Wrapper)``
 
 export const Grid = styled.div`
   display: flex;

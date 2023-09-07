@@ -12,27 +12,31 @@ import {
   Button,
 } from './styles'
 
-import CoffeChocolate from '@/assets/coffees/chocolate-quente.png'
+import { CoffeeType } from '@/data/coffees'
 
-export function CardCoffee() {
+interface CardCoffeeProps {
+  coffee: CoffeeType
+}
+
+export function CardCoffee({ coffee }: CardCoffeeProps) {
   return (
     <CardCoffeeContainer>
-      <img src={CoffeChocolate} />
+      <img src={coffee.imageUrl} />
 
       <Tags>
-        <Tag>Expresso</Tag>
-        <Tag>Com leite</Tag>
-        <Tag>Tradicional</Tag>
+        {coffee.tags.map((tag, index) => (
+          <Tag key={index}>{tag}</Tag>
+        ))}
       </Tags>
 
       <Description>
-        <h4>Expresso Tradicional</h4>
-        <p>O tradicional café feito com água quente e grãos moídos</p>
+        <h4>{coffee.name}</h4>
+        <p>{coffee.description}</p>
       </Description>
 
       <Buy>
         <Price>
-          R$ <strong>9,90</strong>
+          R$ <strong>{coffee.price}</strong>
         </Price>
         <Actions>
           <Counter>

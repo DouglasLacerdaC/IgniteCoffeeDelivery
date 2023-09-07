@@ -11,7 +11,7 @@ import Logo from '@/assets/logo.svg'
 
 export function Header() {
   return (
-    <HeaderContainer>
+    <HeaderContainer data-aos="fade-down" data-aos-duration="1000">
       <Wrapper>
         <img src={Logo} />
 
