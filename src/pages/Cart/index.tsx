@@ -1,36 +1,22 @@
-import { MapPinLine } from '@phosphor-icons/react'
+import { CompleteOrder } from './components/CompleteOrder'
+import { SelectedCoffees } from './components/SelectedCoffees'
 
-import {
-  CartContainer,
-  CartWrapper,
-  BoxContainer,
-  Title,
-  InputContainer,
-} from './styles'
+import { CartContainer, FormWrapper } from './styles'
 
 export function CartPage() {
   return (
     <CartContainer>
-      <CartWrapper>
-        <h2>Complete o seu pedido</h2>
+      <form action="">
+        <FormWrapper>
+          <CompleteOrder />
 
-        <form action="">
-          <BoxContainer>
-            <Title>
-              <MapPinLine size={28} />
-              <div>
-                <h4>Endereço de Entrega</h4>
-                <p>Informe o endereço onde deseja receber seu pedido</p>
-              </div>
-            </Title>
+          <SelectedCoffees />
+        </FormWrapper>
+      </form>
 
-            <InputContainer>
-              <input placeholder="CPF" />
-              <span>Opcional</span>
-            </InputContainer>
-          </BoxContainer>
-        </form>
-      </CartWrapper>
+      {/* <PaymentMethods>
+          <BoxContainer></BoxContainer>
+        </PaymentMethods> */}
     </CartContainer>
   )
 }

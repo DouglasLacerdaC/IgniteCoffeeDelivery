@@ -1,20 +1,14 @@
 import { styled } from 'styled-components'
 
-export const CartContainer = styled.main`
-  padding: 8rem 0;
-`
+export const CompleteOrderContainer = styled.div``
 
-export const FormWrapper = styled.div`
-  max-width: 70rem;
-  margin: 0 auto;
+export const BoxContainer = styled.div`
+  padding: 2.5rem;
+  border-radius: 6px;
+  background-color: ${(props) => props.theme.colors['base-card']};
 
-  display: grid;
-  grid-template-columns: 40rem 28rem;
-  gap: 2rem;
-
-  h2 {
-    font: ${(props) => props.theme.fonts['title-xs']};
-    margin-bottom: 1rem;
+  &:last-child {
+    margin-top: 0.75rem;
   }
 `
 
