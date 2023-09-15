@@ -61,30 +61,6 @@ export const Item = styled.div`
   gap: 0.75rem;
 `
 
-const ICON_COLORS = {
-  'yellow-dark': 'yellow-dark',
-  yellow: 'yellow',
-  purple: 'purple',
-  'base-text': 'base-text',
-} as const
-
-interface IconProps {
-  iconColor: keyof typeof ICON_COLORS
-}
-
-export const Icon = styled.span<IconProps>`
-  height: 2.5rem;
-  width: 2.5rem;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 50%;
-
-  background-color: ${(props) => props.theme.colors[props.iconColor]};
-  color: ${(props) => props.theme.colors.white};
-`
-
 // -------------------------------------- //
 //                  COFFEES
 // -------------------------------------- //

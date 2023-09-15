@@ -9,7 +9,6 @@ import {
   Title,
   Items,
   Item,
-  Icon,
   CoffeesContainer,
   CoffeesWrapper,
   Grid,
@@ -17,6 +16,7 @@ import {
 
 import CoffePreviewImage from '@/assets/coffe-preview.png'
 import { coffees } from '@/data/coffees'
+import { Icon } from '@/components/Icon'
 
 export function HomePage() {
   return (
@@ -36,30 +36,22 @@ export function HomePage() {
 
             <Items>
               <Item data-aos="fade-up" data-aos-duration="1600">
-                <Icon iconColor="yellow-dark">
-                  <ShoppingCart size={22} weight="fill" />
-                </Icon>
+                <Icon iconColor="yellow-dark" icon={ShoppingCart} />
                 <span>Compra simples e segura</span>
               </Item>
 
               <Item data-aos="fade-up" data-aos-duration="1800">
-                <Icon iconColor="base-text">
-                  <Package size={22} weight="fill" />
-                </Icon>
+                <Icon iconColor="base-text" icon={Package} />
                 <span>Embalagem mantém o café intacto</span>
               </Item>
 
               <Item data-aos="fade-up" data-aos-duration="2000">
-                <Icon iconColor="yellow">
-                  <Timer size={22} weight="fill" />
-                </Icon>
+                <Icon iconColor="yellow" icon={Timer} />
                 <span>Entrega rápida e rastreada</span>
               </Item>
 
               <Item data-aos="fade-up" data-aos-duration="2200">
-                <Icon iconColor="purple">
-                  <Coffee size={22} weight="fill" />
-                </Icon>
+                <Icon iconColor="purple" icon={Coffee} />
                 <span>O café chega fresquinho até você</span>
               </Item>
             </Items>

@@ -7,4 +7,5 @@ export const SuccessPageContainer = styled.main`
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 6.375rem;
 `
