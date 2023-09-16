@@ -43,11 +43,8 @@ export const OrderInfo = styled.div`
   }
 `
 
-export const Local = styled.div`
+export const Info = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
 `
-
-export const Timer = styled.div``
-export const Payment = styled.div``

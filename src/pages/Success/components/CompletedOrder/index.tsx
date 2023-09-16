@@ -1,5 +1,5 @@
 import { Icon } from '@/components/Icon'
-import { CompletedOrderContainer, Title, OrderInfo, Local } from './styles'
+import { CompletedOrderContainer, Title, OrderInfo, Info } from './styles'
 import { Clock, CurrencyDollar, MapPin } from '@phosphor-icons/react'
 
 export function CompletedOrder() {
@@ -11,7 +11,7 @@ export function CompletedOrder() {
       </Title>
 
       <OrderInfo>
-        <Local>
+        <Info>
           <Icon icon={MapPin} iconColor="purple" />
           <div>
             <p>
@@ -19,23 +19,23 @@ export function CompletedOrder() {
               Farrapos - Porto Alegre, RS
             </p>
           </div>
-        </Local>
+        </Info>
 
-        <Local>
+        <Info>
           <Icon icon={Clock} iconColor="yellow" />
           <div>
             <p>Previsão de entrega</p>
             <strong>20 min - 30 min </strong>
           </div>
-        </Local>
+        </Info>
 
-        <Local>
+        <Info>
           <Icon icon={CurrencyDollar} iconColor="yellow-dark" hasFill={false} />
           <div>
             <p>Pagamento na entrega</p>
             <strong>Cartão de Crédito</strong>
           </div>
-        </Local>
+        </Info>
       </OrderInfo>
     </CompletedOrderContainer>
   )
