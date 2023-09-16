@@ -17,13 +17,30 @@ export const Title = styled.div`
 `
 
 export const OrderInfo = styled.div`
-  border: double 1px transparent;
+  position: relative;
+  background-color: ${(props) => props.theme.colors.background};
+  border: solid 1px transparent;
 
   border-image-slice: 1;
   border-radius: 6px 36px 6px;
-  border-image-source: linear-gradient(#dbac2c, #8047f8);
 
   padding: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(100deg, #dbac2c, #8047f8);
+    z-index: -1;
+    border-radius: 6px 36px 6px;
+  }
 `
 
 export const Local = styled.div`

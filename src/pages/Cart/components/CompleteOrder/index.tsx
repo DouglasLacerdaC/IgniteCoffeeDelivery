@@ -7,7 +7,7 @@ import { CompleteOrderContainer, Title, BoxContainer } from './styles'
 
 export function CompleteOrder() {
   return (
-    <CompleteOrderContainer>
+    <CompleteOrderContainer data-aos="fade-up" data-aos-duration="1400">
       <h2>Complete o seu pedido</h2>
 
       <BoxContainer>

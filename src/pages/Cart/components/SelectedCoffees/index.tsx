@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { SelectedCoffeeCard } from './SelectedCoffeeCard'
 
 import {
@@ -8,8 +9,10 @@ import {
 } from './styles'
 
 export function SelectedCoffees() {
+  const navigate = useNavigate()
+
   return (
-    <SelectedCoffeesContainer>
+    <SelectedCoffeesContainer data-aos="fade-up" data-aos-duration="1600">
       <h4>Cafés selecionados</h4>
 
       <BoxSelected>
@@ -20,7 +23,9 @@ export function SelectedCoffees() {
           </>
         ))}
 
-        <ConfirmOrderButton>Confirmar Pedido</ConfirmOrderButton>
+        <ConfirmOrderButton onClick={() => navigate('/success')}>
+          Confirmar Pedido
+        </ConfirmOrderButton>
       </BoxSelected>
     </SelectedCoffeesContainer>
   )
