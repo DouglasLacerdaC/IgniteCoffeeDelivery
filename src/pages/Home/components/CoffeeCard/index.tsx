@@ -13,12 +13,13 @@ import {
 
 import { CoffeeType } from '@/data/coffees'
 import { Counter } from '../Counter'
+import { formatNumberForMoney } from '@/helpers/formatNumberForMoney'
 
 interface CardCoffeeProps {
   coffee: CoffeeType
 }
 
-export function CardCoffee({ coffee }: CardCoffeeProps) {
+export function CoffeeCard({ coffee }: CardCoffeeProps) {
   return (
     <CardCoffeeContainer>
       <img src={coffee.imageUrl} />
@@ -36,7 +37,7 @@ export function CardCoffee({ coffee }: CardCoffeeProps) {
 
       <Buy>
         <Price>
-          R$ <strong>{coffee.price}</strong>
+          R$ <strong>{formatNumberForMoney(coffee.price)}</strong>
         </Price>
         <Actions>
           <Counter />

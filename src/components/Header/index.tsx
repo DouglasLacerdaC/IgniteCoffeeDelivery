@@ -25,7 +25,7 @@ export function Header() {
           </Location>
           <Link to="/cart">
             <Cart>
-              <span>3</span>
+              <span>0</span>
               <ShoppingCart size={22} weight="fill" />
             </Cart>
           </Link>

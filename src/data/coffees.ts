@@ -14,7 +14,7 @@ export const coffees: CoffeeType[] = [
     tags: ['Tradicional'],
     name: 'Expresso Tradicional',
     description: 'O tradicional café feito com água quente e grãos moídos',
-    price: 9.9,
+    price: 4.5,
   },
   {
     id: 2,
