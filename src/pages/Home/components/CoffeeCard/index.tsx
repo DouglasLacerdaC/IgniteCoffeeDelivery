@@ -14,12 +14,48 @@ import {
 import { CoffeeType } from '@/data/coffees'
 import { Counter } from '../Counter'
 import { formatNumberForMoney } from '@/helpers/formatNumberForMoney'
+import { useState } from 'react'
+import { useCart } from '@/hooks/useCart'
 
 interface CardCoffeeProps {
   coffee: CoffeeType
 }
 
 export function CoffeeCard({ coffee }: CardCoffeeProps) {
+  const [quantityCoffee, setQuantityCoffee] = useState<number>(1)
+
+  const { addItemToCart } = useCart()
+
+  function increaseQuantity() {
+    setQuantityCoffee((state) => {
+      if (state < 5) {
+        return state + 1
+      }
+
+      return state
+    })
+  }
+
+  function decreaseQuantity() {
+    setQuantityCoffee((state) => {
+      if (state > 1) {
+        return state - 1
+      }
+
+      return state
+    })
+  }
+
+  function addToCart() {
+    addItemToCart({
+      id: coffee.id,
+      imageUrl: coffee.imageUrl,
+      price: coffee.price,
+      name: coffee.name,
+      quantity: quantityCoffee,
+    })
+  }
+
   return (
     <CardCoffeeContainer>
       <img src={coffee.imageUrl} />
@@ -40,8 +76,13 @@ export function CoffeeCard({ coffee }: CardCoffeeProps) {
           R$ <strong>{formatNumberForMoney(coffee.price)}</strong>
         </Price>
         <Actions>
-          <Counter />
-          <Button>
+          <Counter
+            quantity={quantityCoffee}
+            decreaseFunction={decreaseQuantity}
+            increaseFunction={increaseQuantity}
+          />
+
+          <Button onClick={addToCart}>
             <ShoppingCartSimple size={22} weight="fill" />
           </Button>
         </Actions>

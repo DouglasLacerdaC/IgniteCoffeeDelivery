@@ -13,10 +13,6 @@ export function CartPage() {
           <SelectedCoffees />
         </FormWrapper>
       </form>
-
-      {/* <PaymentMethods>
-          <BoxContainer></BoxContainer>
-        </PaymentMethods> */}
     </CartContainer>
   )
 }

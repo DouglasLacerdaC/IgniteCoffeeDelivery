@@ -11,20 +11,49 @@ import {
   SelectedCoffeeCardContainer,
 } from './styles'
 
-import img from '@/assets/coffees/arabe.png'
+import { CoffeeCart } from '@/contexts/CartContext'
+import { formatNumberForMoney } from '@/helpers/formatNumberForMoney'
+import { useCart } from '@/hooks/useCart'
 
-export function SelectedCoffeeCard() {
+interface SelectedCoffeeCardProps {
+  coffee: CoffeeCart
+}
+
+export function SelectedCoffeeCard({ coffee }: SelectedCoffeeCardProps) {
+  const {
+    increaseQuantityItemCart,
+    decreaseQuantityItemCart,
+    removeItemFromCart,
+  } = useCart()
+
+  function handleIncreaseQuantity() {
+    increaseQuantityItemCart(coffee.id)
+  }
+
+  function handleDecreaseQuantity() {
+    decreaseQuantityItemCart(coffee.id)
+  }
+
+  function handleRemoveItem() {
+    removeItemFromCart(coffee.id)
+  }
+
   return (
     <SelectedCoffeeCardContainer>
       <Info>
-        <img src={img} />
+        <img src={coffee.imageUrl} />
 
         <Details>
-          <span>Expresso Tradicional</span>
+          <span>{coffee.name}</span>
 
           <Actions>
-            <Counter />
-            <RemoveCoffeeButton>
+            <Counter
+              quantity={coffee.quantity}
+              increaseFunction={handleIncreaseQuantity}
+              decreaseFunction={handleDecreaseQuantity}
+            />
+
+            <RemoveCoffeeButton type="button" onClick={handleRemoveItem}>
               <Trash size={16} />
               Remover
             </RemoveCoffeeButton>
@@ -32,7 +61,7 @@ export function SelectedCoffeeCard() {
         </Details>
       </Info>
 
-      <Price>R$ 9,90</Price>
+      <Price>R$ {formatNumberForMoney(coffee.price * coffee.quantity)}</Price>
     </SelectedCoffeeCardContainer>
   )
 }

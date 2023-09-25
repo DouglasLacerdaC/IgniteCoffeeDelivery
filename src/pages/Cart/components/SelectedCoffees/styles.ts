@@ -28,6 +28,8 @@ export const ConfirmOrderButton = styled.button`
   border: none;
   width: 100%;
 
+  margin-top: 1.5rem;
+
   transition: 0.5s;
   cursor: pointer;
 
