@@ -30,9 +30,7 @@ export function SelectedCoffees() {
 
         <PriceInfos />
 
-        <ConfirmOrderButton onClick={() => navigate('/success')}>
-          Confirmar Pedido
-        </ConfirmOrderButton>
+        <ConfirmOrderButton>Confirmar Pedido</ConfirmOrderButton>
       </BoxSelected>
     </SelectedCoffeesContainer>
   )

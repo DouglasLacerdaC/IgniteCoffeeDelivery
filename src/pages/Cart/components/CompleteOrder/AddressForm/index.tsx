@@ -1,36 +1,21 @@
-import { AddressFormContainer, Input } from './styles'
+import { CompleteOrderFormType } from '@/pages/Cart'
+import { AddressFormContainer, Input, InputWrapper, TextError } from './styles'
+import { useFormContext } from 'react-hook-form'
 
 export function AddressForm() {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<CompleteOrderFormType>()
+
   return (
     <AddressFormContainer>
-      <Input className="cpf">
-        <input placeholder="CPF" />
-      </Input>
-
-      <Input className="street">
-        <input placeholder="Rua" />
-      </Input>
-
-      <Input>
-        <input placeholder="Número" />
-      </Input>
-
-      <Input className="complement">
-        <input placeholder="Complemento" />
-        <span>Opcional</span>
-      </Input>
-
-      <Input>
-        <input placeholder="Bairro" />
-      </Input>
-
-      <Input>
-        <input placeholder="Cidade" />
-      </Input>
-
-      <Input>
-        <input placeholder="UF" />
-      </Input>
+      <InputWrapper className={`cep ${errors?.cep ? 'error' : ''}`}>
+        <Input>
+          <input placeholder="CEP" {...register('cep')} />
+        </Input>
+        <TextError>{errors?.cep?.message}</TextError>
+      </InputWrapper>
     </AddressFormContainer>
   )
 }
