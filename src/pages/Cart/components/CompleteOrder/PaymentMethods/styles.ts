@@ -2,10 +2,16 @@ import { styled } from 'styled-components'
 
 export const PaymentMethodsContainer = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 0.75rem;
 `
 
-export const Method = styled.div`
+export const Methods = styled.div`
+  display: flex;
+  gap: 0.75rem;
+`
+
+export const PaymentMethod = styled.div`
   width: 100%;
 
   input {

@@ -1,6 +1,9 @@
 import { CreditCard, Bank, Money } from '@phosphor-icons/react'
 
-import { Method, PaymentMethodsContainer } from './styles'
+import { Methods, PaymentMethod, PaymentMethodsContainer } from './styles'
+import { useFormContext } from 'react-hook-form'
+import { CompleteOrderFormType } from '@/pages/Cart'
+import { TextError } from '@/components/TextField/styles'
 
 export function PaymentMethods() {
   const methods = [
@@ -21,17 +24,30 @@ export function PaymentMethods() {
     },
   ]
 
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<CompleteOrderFormType>()
+
   return (
     <PaymentMethodsContainer>
-      {methods.map(({ value, label, icon: Icon }) => (
-        <Method key={value}>
-          <input type="radio" id="credito" value={value} />
-          <label htmlFor="credito">
-            <Icon size={18} />
-            <span>{label}</span>
-          </label>
-        </Method>
-      ))}
+      <Methods>
+        {methods.map(({ value, label, icon: Icon }) => (
+          <PaymentMethod key={value}>
+            <input
+              type="radio"
+              id={value}
+              value={value}
+              {...register('paymentMethod')}
+            />
+            <label htmlFor={value}>
+              <Icon size={18} />
+              <span>{label}</span>
+            </label>
+          </PaymentMethod>
+        ))}
+      </Methods>
+      <TextError>{errors.paymentMethod?.message}</TextError>
     </PaymentMethodsContainer>
   )
 }

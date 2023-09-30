@@ -1,21 +1,17 @@
 import { styled } from 'styled-components'
 
-interface InputType {
-  isOptional?: boolean
-}
-
-export const InputWrapper = styled.div`
+export const TextFieldContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 `
 
 export const TextError = styled.span`
-  color: red;
   font: ${(props) => props.theme.fonts['text-s']};
+  color: red;
 `
 
-export const InputContainer = styled.fieldset<InputType>`
+export const InputContainer = styled.fieldset`
   border: none;
   border: 1px solid ${(props) => props.theme.colors['base-button']};
   border-radius: 6px;
@@ -41,10 +37,6 @@ export const InputContainer = styled.fieldset<InputType>`
     outline: none;
     border: none;
     padding: 0.75rem 0 0.75rem 0.75rem;
-
-    &::placeholder {
-      color: ${(props) => props.theme.colors['base-label']};
-    }
   }
 
   span {

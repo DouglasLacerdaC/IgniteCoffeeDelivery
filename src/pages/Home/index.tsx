@@ -1,4 +1,6 @@
 import { CoffeeCard } from './components/CoffeeCard'
+import { BenefitsList } from './components/BenefitsList'
+import { LimitExceededModal } from './components/LimitExceededModal'
 
 import {
   HomeContainer,
@@ -12,7 +14,6 @@ import {
 
 import CoffePreviewImage from '@/assets/coffe-preview.png'
 import { coffees } from '@/data/coffees'
-import { BenefitsList } from './components/BenefitsList'
 
 export function HomePage() {
   return (
@@ -50,6 +51,8 @@ export function HomePage() {
           </Grid>
         </CoffeesWrapper>
       </CoffeesContainer>
+
+      {/* <LimitExceededModal /> */}
     </HomeContainer>
   )
 }

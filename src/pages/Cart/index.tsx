@@ -10,11 +10,19 @@ import * as zod from 'zod'
 const CompleteOrderFormSchema = zod.object({
   cep: zod.string().min(1, 'Informe o CEP'),
   street: zod.string().min(1, 'Informe a rua'),
-  number: zod.number().min(1, 'Informe o número'),
+  number: zod
+    .number({
+      required_error: 'Informe o número',
+      invalid_type_error: 'Informe o número',
+    })
+    .min(1, 'Informe o número'),
   complement: zod.string().max(30, 'Limite de até 30 caracteres').optional(),
   neighborhood: zod.string().min(1, 'Informe o bairro'),
   city: zod.string().min(1, 'Informe a cidade'),
   uf: zod.string().min(1, 'Informe o UF'),
+  paymentMethod: zod.enum(['debito', 'credito', 'dinheiro'], {
+    errorMap: () => ({ message: 'Selecione um método de pagamento' }),
+  }),
 })
 
 export type CompleteOrderFormType = zod.infer<typeof CompleteOrderFormSchema>
