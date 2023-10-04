@@ -16,6 +16,7 @@ export function AddressForm() {
       <TextField
         placeholder="CEP"
         className="cep"
+        mask="9999-999"
         {...register('cep')}
         textError={errors.cep?.message}
       />

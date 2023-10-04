@@ -15,7 +15,7 @@ export const TextField = forwardRef<InputMask, TextFieldProps>(
     return (
       <TextFieldContainer className={className}>
         <InputContainer className={textError ? 'error' : ''}>
-          <InputMask placeholder="CEP" {...props} mask={mask || ''} ref={ref} />
+          <InputMask placeholder="CEP" mask={mask ?? ''} {...props} ref={ref} />
           {isOptional && <span>Opcional</span>}
         </InputContainer>
         {textError && <TextError>{textError}</TextError>}
