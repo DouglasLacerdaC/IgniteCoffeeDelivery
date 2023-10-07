@@ -10,7 +10,7 @@ export interface CoffeeType {
 export const coffees: CoffeeType[] = [
   {
     id: 1,
-    imageUrl: 'src/assets/coffees/expresso.png',
+    imageUrl: 'coffees/expresso.png',
     tags: ['Tradicional'],
     name: 'Expresso Tradicional',
     description: 'O tradicional café feito com água quente e grãos moídos',
@@ -18,7 +18,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 2,
-    imageUrl: 'src/assets/coffees/americano.png',
+    imageUrl: 'coffees/americano.png',
     tags: ['Tradicional'],
     name: 'Expresso Americano',
     description: 'Expresso diluído, menos intenso que o tradicional',
@@ -26,7 +26,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 3,
-    imageUrl: 'src/assets/coffees/americano-cremoso.png',
+    imageUrl: 'coffees/americano-cremoso.png',
     tags: ['Tradicional'],
     name: 'Expresso Cremoso',
     description: 'Café expresso tradicional com espuma cremosa',
@@ -34,7 +34,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 4,
-    imageUrl: 'src/assets/coffees/cafe-gelado.png',
+    imageUrl: 'coffees/cafe-gelado.png',
     tags: ['Tradicional', 'gelado'],
     name: 'Expresso Gelado',
     description: 'Bebida preparada com café expresso e cubos de gelo',
@@ -42,7 +42,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 5,
-    imageUrl: 'src/assets/coffees/cafe-com-leite.png',
+    imageUrl: 'coffees/cafe-com-leite.png',
     tags: ['Tradicional', 'com leite'],
     name: 'Café com Leite',
     description: 'Meio a meio de expresso tradicional com leite vaporizado',
@@ -50,7 +50,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 6,
-    imageUrl: 'src/assets/coffees/latte.png',
+    imageUrl: 'coffees/latte.png',
     tags: ['Tradicional', 'com leite'],
     name: 'Latte',
     description:
@@ -59,7 +59,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 7,
-    imageUrl: 'src/assets/coffees/capuccino.png',
+    imageUrl: 'coffees/capuccino.png',
     tags: ['Tradicional', 'com leite'],
     name: 'Capuccino',
     description:
@@ -68,7 +68,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 8,
-    imageUrl: 'src/assets/coffees/macchiato.png',
+    imageUrl: 'coffees/macchiato.png',
     tags: ['Tradicional', 'com leite'],
     name: 'Macchiato',
     description:
@@ -77,7 +77,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 9,
-    imageUrl: 'src/assets/coffees/mocaccino.png',
+    imageUrl: 'coffees/mocaccino.png',
     tags: ['Tradicional', 'com leite'],
     name: 'Mocaccino',
     description: 'Café expresso com calda de chocolate, pouco leite e espuma',
@@ -85,7 +85,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 10,
-    imageUrl: 'src/assets/coffees/chocolate-quente.png',
+    imageUrl: 'coffees/chocolate-quente.png',
     tags: ['Especial', 'com leite'],
     name: 'Chocolate Quente',
     description: 'Bebida feita com chocolate dissolvido no leite quente e café',
@@ -93,7 +93,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 11,
-    imageUrl: 'src/assets/coffees/cubano.png',
+    imageUrl: 'coffees/cubano.png',
     tags: ['Especial', 'alcoólico', 'gelado'],
     name: 'Cubano',
     description:
@@ -102,7 +102,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 12,
-    imageUrl: 'src/assets/coffees/havaiano.png',
+    imageUrl: 'coffees/havaiano.png',
     tags: ['Especial'],
     name: 'Havaiano',
     description: 'Bebida adocicada preparada com café e leite de coco',
@@ -110,7 +110,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 13,
-    imageUrl: 'src/assets/coffees/arabe.png',
+    imageUrl: 'coffees/arabe.png',
     tags: ['Especial', 'alcoólico'],
     name: 'Árabe',
     description: 'Bebida preparada com grãos de café árabe e especiarias',
@@ -118,7 +118,7 @@ export const coffees: CoffeeType[] = [
   },
   {
     id: 14,
-    imageUrl: 'src/assets/coffees/irlandes.png',
+    imageUrl: 'coffees/irlandes.png',
     tags: ['Especial'],
     name: 'Irlandês',
     description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
