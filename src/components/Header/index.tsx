@@ -11,7 +11,6 @@ import {
   Cart,
 } from './styles'
 
-import Logo from '@/assets/logo.svg'
 import { useEffect, useState } from 'react'
 
 export function Header() {
@@ -51,7 +50,7 @@ export function Header() {
     >
       <Wrapper>
         <Link to="/" aria-label="Ir para a tela de início">
-          <img src={Logo} />
+          <img src="logo.svg" />
         </Link>
 
         <ActionsContainer>

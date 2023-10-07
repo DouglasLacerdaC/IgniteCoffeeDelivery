@@ -41,7 +41,7 @@ export function SelectedCoffeeCard({ coffee }: SelectedCoffeeCardProps) {
   return (
     <SelectedCoffeeCardContainer>
       <Info>
-        <img src={coffee.imageUrl} />
+        <img src={coffee.imageUrl} alt={coffee.name} />
 
         <Details>
           <span>{coffee.name}</span>

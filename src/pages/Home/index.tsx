@@ -12,7 +12,6 @@ import {
   Grid,
 } from './styles'
 
-import CoffePreviewImage from '@/assets/coffe-preview.png'
 import { coffees } from '@/data/coffees'
 
 export function HomePage() {
@@ -34,7 +33,7 @@ export function HomePage() {
             <BenefitsList />
           </div>
 
-          <img src={CoffePreviewImage} />
+          <img src="coffe-preview.png" />
         </HeroWrapper>
       </HeroContainer>
 

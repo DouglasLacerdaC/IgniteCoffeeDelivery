@@ -6,7 +6,6 @@ import {
   ModalContainer,
 } from './styles'
 
-import IllustrationCoffee from '@/assets/illustration-coffee.webp'
 import { X } from '@phosphor-icons/react'
 
 export function LimitExceededModal() {
@@ -20,7 +19,7 @@ export function LimitExceededModal() {
         <ButtonClose onClick={resetExceededQuantity}>
           <X />
         </ButtonClose>
-        <img src={IllustrationCoffee} alt="" />
+        <img src="illustration-coffee.webp" alt="" />
 
         <DetailsInfo>
           <h5>Limite de cafés excedido!</h5>

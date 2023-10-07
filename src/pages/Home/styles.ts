@@ -1,5 +1,4 @@
 import { styled } from 'styled-components'
-import BackgroundImage from '@/assets/background.png'
 
 export const HomeContainer = styled.main``
 
@@ -32,7 +31,7 @@ export const HeroWrapper = styled(Wrapper)`
 
 export const HeroContainer = styled.section`
   width: 100%;
-  background-image: url(${BackgroundImage});
+  background-image: url('background.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
