@@ -1,5 +1,3 @@
-import { useNavigate } from 'react-router-dom'
-
 import { SelectedCoffeeCard } from './SelectedCoffeeCard'
 import { useCart } from '@/hooks/useCart'
 

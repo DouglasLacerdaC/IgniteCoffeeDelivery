@@ -50,7 +50,7 @@ export function Header() {
       data-aos-duration="1000"
     >
       <Wrapper>
-        <Link to="/">
+        <Link to="/" aria-label="Ir para a tela de início">
           <img src={Logo} />
         </Link>
 

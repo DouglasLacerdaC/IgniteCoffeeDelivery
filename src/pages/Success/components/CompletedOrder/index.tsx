@@ -1,7 +1,7 @@
 import { Icon } from '@/components/Icon'
 import { CompletedOrderContainer, Title, OrderInfo, Info } from './styles'
 import { Clock, CurrencyDollar, MapPin } from '@phosphor-icons/react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { methods } from '@/pages/Cart/components/CompleteOrder/PaymentMethods'
 import { CompleteOrderFormType } from '@/pages/Cart'
 
@@ -11,7 +11,6 @@ interface LocationRouterType {
 
 export function CompletedOrder() {
   const { state } = useLocation() as LocationRouterType
-  const navigate = useNavigate()
 
   const methodLabel = methods.find((method) => {
     return method.value === state.paymentMethod

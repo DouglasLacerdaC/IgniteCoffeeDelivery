@@ -15,11 +15,19 @@ export function Counter({
 }: CounterProps) {
   return (
     <CounterContainer>
-      <button type="button" onClick={decreaseFunction}>
+      <button
+        type="button"
+        onClick={decreaseFunction}
+        aria-label="Remover itens"
+      >
         <Minus size={18} />
       </button>
       <span>{quantity}</span>
-      <button type="button" onClick={increaseFunction}>
+      <button
+        type="button"
+        onClick={increaseFunction}
+        aria-label="Adicionar itens"
+      >
         <Plus size={18} />
       </button>
     </CounterContainer>

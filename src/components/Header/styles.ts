@@ -90,7 +90,7 @@ export const Cart = styled(Button)`
   }
 
   &.animation-add-item span {
-    animation: ${(props) => AnimationAddNewItem} 1s;
+    animation: ${() => AnimationAddNewItem} 1s;
   }
 
   & span {

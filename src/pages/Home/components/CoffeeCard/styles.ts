@@ -1,4 +1,4 @@
-import { keyframes, styled } from 'styled-components'
+import { styled } from 'styled-components'
 
 export const CardCoffeeContainer = styled.article`
   max-width: 16rem;

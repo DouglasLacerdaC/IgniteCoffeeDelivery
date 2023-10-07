@@ -82,7 +82,7 @@ export function CoffeeCard({ coffee }: CardCoffeeProps) {
             increaseFunction={increaseQuantity}
           />
 
-          <Button onClick={addToCart}>
+          <Button onClick={addToCart} aria-label="Adicionar ao carrrinho">
             <ShoppingCartSimple size={22} weight="fill" />
           </Button>
         </Actions>
