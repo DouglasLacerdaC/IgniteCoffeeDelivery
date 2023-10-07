@@ -1,10 +1,11 @@
 import { styled } from 'styled-components'
 
 export const CartContainer = styled.main`
-  padding: 8rem 0;
+  padding: 8rem 2rem;
 `
 
 export const FormWrapper = styled.div`
+  width: 100%;
   max-width: 70rem;
   margin: 0 auto;
 
@@ -15,6 +16,10 @@ export const FormWrapper = styled.div`
   h2 {
     font: ${(props) => props.theme.fonts['title-xs']};
     margin-bottom: 1rem;
+  }
+
+  @media (max-width: 1220px) {
+    grid-template-columns: 1fr;
   }
 `
 

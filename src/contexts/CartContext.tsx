@@ -1,4 +1,20 @@
-import { ReactNode, createContext, useState, useEffect } from 'react'
+import { cartReducer } from '@/reducers/cart/reducer'
+import {
+  addItemToCartAction,
+  clearCartAction,
+  decreaseQuantityItemAction,
+  increaseQuantityItemAction,
+  removeItemFromCartAction,
+  resetExceededQuantityAction,
+} from '@/reducers/cart/actions'
+
+import {
+  ReactNode,
+  createContext,
+  useState,
+  useEffect,
+  useReducer,
+} from 'react'
 
 export interface CoffeeCart {
   id: number
@@ -15,76 +31,68 @@ interface CartContextType {
   increaseQuantityItemCart: (itemId: number) => void
   decreaseQuantityItemCart: (itemId: number) => void
   removeItemFromCart: (itemId: number) => void
+  exceededQuantity: boolean
+  resetExceededQuantity: () => void
+  clearCart: () => void
 }
 
 export const CartContext = createContext({} as CartContextType)
 
 export function CartContextProvider({ children }: { children: ReactNode }) {
-  const [cartItems, setCartItems] = useState([] as CoffeeCart[])
+  const [cartState, dispatch] = useReducer(
+    cartReducer,
+    {
+      cartItems: [],
+      exceededQuantity: false,
+    },
+    () => {
+      const cartItemsSavedStorage = localStorage.getItem('cart-data')
+
+      if (cartItemsSavedStorage) {
+        return JSON.parse(cartItemsSavedStorage)
+      }
+    },
+  )
+
   const [totalCartPrice, setTotalCartPrice] = useState<number>(0)
 
+  const { cartItems, exceededQuantity } = cartState
+
   function addItemToCart(item: CoffeeCart) {
-    setCartItems((state) => {
-      const existInCart = state.find((coffee) => coffee.id === item.id)
-      const SUM_QUANTITY_COFFEE = existInCart
-        ? existInCart.quantity + item.quantity
-        : 0
-
-      if (!existInCart) {
-        return [...state, item]
-      }
-
-      if (existInCart && SUM_QUANTITY_COFFEE <= 5) {
-        return state.map((coffee) => {
-          if (coffee.id === existInCart.id) {
-            return { ...coffee, quantity: SUM_QUANTITY_COFFEE }
-          }
-
-          return coffee
-        })
-      }
-
-      return state
-    })
+    dispatch(addItemToCartAction(item))
   }
 
   function decreaseQuantityItemCart(itemId: number) {
-    setCartItems((state) => {
-      return state.map((coffee) => {
-        if (coffee.id === itemId && coffee.quantity > 1) {
-          return { ...coffee, quantity: coffee.quantity - 1 }
-        }
-
-        return coffee
-      })
-    })
+    dispatch(decreaseQuantityItemAction(itemId))
   }
 
   function increaseQuantityItemCart(itemId: number) {
-    setCartItems((state) => {
-      return state.map((coffee) => {
-        if (coffee.id === itemId && coffee.quantity < 5) {
-          return { ...coffee, quantity: coffee.quantity + 1 }
-        }
-
-        return coffee
-      })
-    })
+    dispatch(increaseQuantityItemAction(itemId))
   }
 
   function removeItemFromCart(itemId: number) {
-    setCartItems((state) => {
-      return state.filter((coffee) => coffee.id !== itemId)
-    })
+    dispatch(removeItemFromCartAction(itemId))
+  }
+
+  function resetExceededQuantity() {
+    dispatch(resetExceededQuantityAction())
+  }
+
+  function clearCart() {
+    dispatch(clearCartAction())
   }
 
   useEffect(() => {
-    setTotalCartPrice((state) => {
+    setTotalCartPrice(() => {
       return cartItems.reduce((price, item) => {
         return (price += item.price * item.quantity)
       }, 0)
     })
   }, [cartItems])
+
+  useEffect(() => {
+    localStorage.setItem('cart-data', JSON.stringify(cartState))
+  }, [cartState])
 
   return (
     <CartContext.Provider
@@ -95,6 +103,9 @@ export function CartContextProvider({ children }: { children: ReactNode }) {
         increaseQuantityItemCart,
         decreaseQuantityItemCart,
         removeItemFromCart,
+        exceededQuantity,
+        resetExceededQuantity,
+        clearCart,
       }}
     >
       {children}

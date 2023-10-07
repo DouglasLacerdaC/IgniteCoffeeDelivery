@@ -1,14 +1,14 @@
 import { styled } from 'styled-components'
 
-const ICON_COLORS = {
+export const ICON_COLORS = {
   'yellow-dark': 'yellow-dark',
   yellow: 'yellow',
   purple: 'purple',
   'base-text': 'base-text',
 } as const
 
-export interface IconUIProps {
-  iconColor: keyof typeof ICON_COLORS
+interface IconUIProps {
+  $iconColor: keyof typeof ICON_COLORS
 }
 
 export const IconUI = styled.span<IconUIProps>`
@@ -20,6 +20,6 @@ export const IconUI = styled.span<IconUIProps>`
 
   border-radius: 50%;
 
-  background-color: ${(props) => props.theme.colors[props.iconColor]};
+  background-color: ${(props) => props.theme.colors[props.$iconColor]};
   color: ${(props) => props.theme.colors.white};
 `

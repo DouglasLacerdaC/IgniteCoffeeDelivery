@@ -9,6 +9,10 @@ export const PaymentMethodsContainer = styled.div`
 export const Methods = styled.div`
   display: flex;
   gap: 0.75rem;
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+  }
 `
 
 export const PaymentMethod = styled.div`

@@ -52,7 +52,7 @@ export function HomePage() {
         </CoffeesWrapper>
       </CoffeesContainer>
 
-      {/* <LimitExceededModal /> */}
+      <LimitExceededModal />
     </HomeContainer>
   )
 }

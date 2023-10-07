@@ -20,7 +20,7 @@ const CompletedOrderOpacityAnimation = keyframes`
 
 const MoveSmokeAnimation = keyframes`
   from {
-    transform: translateX(0);
+    transform: translateX(-50px);
     
   } to {
     transform: translateX(160px);
@@ -28,8 +28,12 @@ const MoveSmokeAnimation = keyframes`
   }
 `
 
+export const SvgContainer = styled.svg`
+  width: 100%;
+`
+
 export const MotorcyclistAnimation = styled.g`
-  animation: ${MotorcyclistMoveAnimation} 2s
+  animation: ${MotorcyclistMoveAnimation} 2s 0.5s
     cubic-bezier(0.51, 0.99, 0.71, -0.1) forwards;
   z-index: 100000;
 `

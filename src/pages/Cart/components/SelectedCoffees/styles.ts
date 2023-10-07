@@ -36,4 +36,8 @@ export const ConfirmOrderButton = styled.button`
   &:hover {
     background-color: ${(props) => props.theme.colors['yellow-dark']};
   }
+
+  &:disabled {
+    opacity: 0.7;
+  }
 `

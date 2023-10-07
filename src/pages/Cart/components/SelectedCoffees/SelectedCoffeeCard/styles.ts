@@ -4,6 +4,15 @@ export const SelectedCoffeeCardContainer = styled.article`
   padding: 0.5rem 0.25rem;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 425px) {
+    align-items: center;
+  }
 `
 
 export const Info = styled.div`
@@ -13,6 +22,10 @@ export const Info = styled.div`
 
   img {
     width: 4rem;
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column;
   }
 `
 export const Details = styled.div`

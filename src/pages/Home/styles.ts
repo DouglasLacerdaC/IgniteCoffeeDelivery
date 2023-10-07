@@ -4,7 +4,8 @@ import BackgroundImage from '@/assets/background.png'
 export const HomeContainer = styled.main``
 
 const Wrapper = styled.div`
-  width: 70rem;
+  width: 100%;
+  max-width: 70rem;
   margin: 0 auto;
 `
 
@@ -15,6 +16,18 @@ const Wrapper = styled.div`
 export const HeroWrapper = styled(Wrapper)`
   display: flex;
   gap: 2rem;
+
+  img {
+    height: min-content;
+  }
+
+  @media (max-width: 825px) {
+    flex-direction: column-reverse;
+
+    img {
+      max-width: 25rem;
+    }
+  }
 `
 
 export const HeroContainer = styled.section`
@@ -24,18 +37,13 @@ export const HeroContainer = styled.section`
   background-size: cover;
   background-attachment: fixed;
 
-  padding: 10rem 0;
+  padding: 10rem 2rem;
 `
 
 export const Title = styled.div`
   margin-bottom: 4rem;
 
   h1,
-  h2 {
-    font: ${(props) => props.theme.fonts['title-xl']};
-    margin-bottom: 1rem;
-  }
-
   h2 {
     font: ${(props) => props.theme.fonts['title-l']};
     margin-bottom: 1rem;
@@ -45,6 +53,14 @@ export const Title = styled.div`
     color: ${(props) => props.theme.colors['base-subtitle']};
     font: ${(props) => props.theme.fonts['text-l/400']};
   }
+
+  @media (max-width: 1220px) {
+    h1,
+    h2 {
+      font: ${(props) => props.theme.fonts['title-l']};
+      margin-bottom: 1rem;
+    }
+  }
 `
 
 // -------------------------------------- //
@@ -52,7 +68,7 @@ export const Title = styled.div`
 // -------------------------------------- //
 
 export const CoffeesContainer = styled.section`
-  padding: 2rem 0;
+  padding: 2rem;
 `
 
 export const CoffeesWrapper = styled(Wrapper)``

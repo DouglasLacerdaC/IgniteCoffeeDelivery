@@ -1,15 +1,25 @@
+import { useCart } from '@/hooks/useCart'
 import {
+  ButtonClose,
   DetailsInfo,
   LimitExceededModalContainer,
   ModalContainer,
 } from './styles'
 
 import IllustrationCoffee from '@/assets/illustration-coffee.webp'
+import { X } from '@phosphor-icons/react'
 
 export function LimitExceededModal() {
+  const { exceededQuantity, resetExceededQuantity } = useCart()
+
   return (
-    <LimitExceededModalContainer>
-      <ModalContainer>
+    <LimitExceededModalContainer
+      data-open={exceededQuantity ? 'opened' : 'closed'}
+    >
+      <ModalContainer data-open={exceededQuantity ? 'opened' : 'closed'}>
+        <ButtonClose onClick={resetExceededQuantity}>
+          <X />
+        </ButtonClose>
         <img src={IllustrationCoffee} alt="" />
 
         <DetailsInfo>

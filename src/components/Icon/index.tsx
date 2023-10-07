@@ -1,15 +1,17 @@
 import { ElementType } from 'react'
 
-import { IconUI, IconUIProps } from './styles'
+import { ICON_COLORS, IconUI } from './styles'
 
-interface IconProps extends IconUIProps {
+type ColorType = keyof typeof ICON_COLORS
+interface IconProps {
   icon: ElementType
   hasFill?: boolean
+  iconColor: ColorType
 }
 
 export function Icon({ icon: Icon, iconColor, hasFill = true }: IconProps) {
   return (
-    <IconUI iconColor={iconColor}>
+    <IconUI $iconColor={iconColor}>
       <Icon size={22} weight={hasFill ? 'fill' : 'regular'} />
     </IconUI>
   )

@@ -5,25 +5,25 @@ import { useFormContext } from 'react-hook-form'
 import { CompleteOrderFormType } from '@/pages/Cart'
 import { TextError } from '@/components/TextField/styles'
 
-export function PaymentMethods() {
-  const methods = [
-    {
-      value: 'credito',
-      label: 'Cartão de crédito',
-      icon: CreditCard,
-    },
-    {
-      value: 'debito',
-      label: 'Cartão de débito',
-      icon: Bank,
-    },
-    {
-      value: 'dinheiro',
-      label: 'Dinheiro',
-      icon: Money,
-    },
-  ]
+export const methods = [
+  {
+    value: 'credito',
+    label: 'Cartão de crédito',
+    icon: CreditCard,
+  },
+  {
+    value: 'debito',
+    label: 'Cartão de débito',
+    icon: Bank,
+  },
+  {
+    value: 'dinheiro',
+    label: 'Dinheiro',
+    icon: Money,
+  },
+]
 
+export function PaymentMethods() {
   const {
     register,
     formState: { errors },

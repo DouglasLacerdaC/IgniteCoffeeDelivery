@@ -4,11 +4,12 @@ import {
   Smoke1,
   Smoke2,
   Smoke3,
+  SvgContainer,
 } from './styles'
 
 export function MotorcyclistSVG() {
   return (
-    <svg
+    <SvgContainer
       width="492"
       height="293"
       viewBox="0 0 492 293"
@@ -450,6 +451,6 @@ export function MotorcyclistSVG() {
           </linearGradient>
         </defs>
       </CompletedOrderAnimation>
-    </svg>
+    </SvgContainer>
   )
 }

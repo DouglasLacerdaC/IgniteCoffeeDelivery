@@ -1,9 +1,33 @@
-import { styled } from 'styled-components'
+import { keyframes, styled } from 'styled-components'
+
+const AnimationAddNewItem = keyframes`
+  0%, 100% {
+    transform: scale(1);
+  } 50% {
+    transform: scale(0.7);
+  }
+`
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  padding: 2rem;
-  position: absolute;
+  position: fixed;
+  top: 0;
+
+  z-index: 1000;
+
+  &[data-scroll='active'] {
+    background-color: ${(props) => props.theme.colors.white};
+    padding: 0.75rem 2rem;
+
+    transition: 0.2s ease;
+  }
+
+  &[data-scroll='disabled'] {
+    background-color: transparent;
+    padding: 2rem;
+
+    transition: 0.2s ease;
+  }
 `
 
 export const Wrapper = styled.div`
@@ -63,6 +87,10 @@ export const Cart = styled(Button)`
   &:hover {
     background-color: ${(props) => props.theme.colors.yellow};
     color: ${(props) => props.theme.colors.white};
+  }
+
+  &.animation-add-item span {
+    animation: ${(props) => AnimationAddNewItem} 1s;
   }
 
   & span {

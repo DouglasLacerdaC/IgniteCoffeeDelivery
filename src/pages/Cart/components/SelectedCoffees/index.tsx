@@ -12,8 +12,6 @@ import {
 import { PriceInfos } from './PriceInfos'
 
 export function SelectedCoffees() {
-  const navigate = useNavigate()
-
   const { cartItems } = useCart()
 
   return (
@@ -22,15 +20,17 @@ export function SelectedCoffees() {
 
       <BoxSelected>
         {cartItems.map((item) => (
-          <>
+          <div key={item.id}>
             <SelectedCoffeeCard coffee={item} />
             <Divider />
-          </>
+          </div>
         ))}
 
         <PriceInfos />
 
-        <ConfirmOrderButton>Confirmar Pedido</ConfirmOrderButton>
+        <ConfirmOrderButton disabled={!cartItems.length}>
+          Confirmar Pedido
+        </ConfirmOrderButton>
       </BoxSelected>
     </SelectedCoffeesContainer>
   )

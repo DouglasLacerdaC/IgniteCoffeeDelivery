@@ -18,4 +18,20 @@ export const AddressFormContainer = styled.div`
   & .complement {
     grid-column: span 2 / auto;
   }
+
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
+
+    & .cep {
+      grid-column: auto;
+    }
+
+    & .street {
+      grid-column: auto;
+    }
+
+    & .complement {
+      grid-column: auto;
+    }
+  }
 `

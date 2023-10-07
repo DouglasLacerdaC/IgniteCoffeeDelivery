@@ -6,6 +6,10 @@ export const BenefitsListContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
 
   gap: 1.25rem 0;
+
+  @media (max-width: 975px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const Item = styled.div`

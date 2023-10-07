@@ -11,12 +11,13 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.1",
-    "@mahiraltinkaya/react-masked-input": "^1.0.5",
     "@phosphor-icons/react": "^2.0.10",
     "aos": "^2.3.4",
+    "immer": "^10.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.46.2",
+    "react-input-mask": "^3.0.0-alpha.2",
     "react-router-dom": "^6.14.1",
     "styled-components": "^6.0.3",
     "zod": "^3.22.2"

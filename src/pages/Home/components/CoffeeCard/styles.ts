@@ -30,6 +30,11 @@ export const CardCoffeeContainer = styled.article`
     margin: -2.25rem 0 0.75rem 0;
     transition: 0.5s;
   }
+
+  @media (max-width: 425px) {
+    width: 100%;
+    max-width: none;
+  }
 `
 
 export const Tags = styled.div`

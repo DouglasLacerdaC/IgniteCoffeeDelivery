@@ -4,6 +4,12 @@ export const TextFieldContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  &.text-uppercase {
+    input {
+      text-transform: uppercase;
+    }
+  }
 `
 
 export const TextError = styled.span`
@@ -37,6 +43,13 @@ export const InputContainer = styled.fieldset`
     outline: none;
     border: none;
     padding: 0.75rem 0 0.75rem 0.75rem;
+
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
   }
 
   span {

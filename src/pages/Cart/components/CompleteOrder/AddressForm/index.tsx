@@ -29,9 +29,12 @@ export function AddressForm() {
       />
 
       <TextField
+        type="number"
         placeholder="Número"
         {...register('number', { valueAsNumber: true })}
         textError={errors.number?.message}
+        minLength={1}
+        maxLength={4}
       />
 
       <TextField
@@ -55,9 +58,11 @@ export function AddressForm() {
       />
 
       <TextField
+        className="text-uppercase"
         placeholder="UF"
         {...register('uf')}
         textError={errors.uf?.message}
+        maxLength={2}
       />
     </AddressFormContainer>
   )
