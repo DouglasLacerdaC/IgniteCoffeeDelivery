@@ -45,12 +45,14 @@ export function CartContextProvider({ children }: { children: ReactNode }) {
       cartItems: [],
       exceededQuantity: false,
     },
-    () => {
+    (initialState) => {
       const cartItemsSavedStorage = localStorage.getItem('cart-data')
 
       if (cartItemsSavedStorage) {
         return JSON.parse(cartItemsSavedStorage)
       }
+
+      return initialState
     },
   )
 
