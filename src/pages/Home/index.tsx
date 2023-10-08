@@ -33,7 +33,7 @@ export function HomePage() {
             <BenefitsList />
           </div>
 
-          <img src="coffe-preview.png" />
+          <img src="coffe-preview.png" alt="Visualização dos nossos cafés" />
         </HeroWrapper>
       </HeroContainer>
 
